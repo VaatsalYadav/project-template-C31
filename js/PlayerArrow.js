@@ -11,8 +11,7 @@ class PlayerArrow {
     this.body = Bodies.rectangle(x, y, this.width, this.height, options);
     this.image = loadImage("./assets/arrow.png");
     //write a code for defining an array named trajectory
-   
-    
+   this.trajectory = []
     World.add(world, this.body);
   }
   shoot(archerAngle) {
@@ -38,14 +37,16 @@ class PlayerArrow {
          code to add the current 
          position of arrow to 
         the trajectory array**/
-      
+        this.trajectoru.push(position)
       }
   
 
       /****write a correct code to add for loop and to display small dots
            at all the positions stored in trajectory array
            *******/
-     
+     for(var i = 0 ; i<this.trajectory.length ; i++){
+      ellipse(this.trajectory[i][0],this.trajectory[i][1],5,5)
+     }
   
   }
 }
